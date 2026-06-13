@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+
+  /* light mode color palate */
+  --color-light-primary: #ffffff;
+  --color-light-secondary: #3870D0;
+
+  --color-light-text-primary: rgba(15, 20, 24, 0.85);
+  --color-light-text-secondary: #ffffff;
+
+  --color-light-card: rgba(56, 112, 208, 0.1);
+  --color-light-card-border: rgba(56, 112, 208, 0.2);
+
+  --color-light-tags: rgba(56, 112, 208, 0.1);
+  --color-light-tags-border: rgba(56, 112, 208, 0.2);
+
+  --color-light-highlight-yellow: #f5a623;
+  --color-light-highlight-pink: #DD5884;
+  --color-light-highlight-green: #297B34;
+
+
+  /* dark mode color palate */
+  --color-dark-primary: #0f1418;
+  --color-dark-secondary: #3870D0;
+  
+  --color-dark-text-primary: #7a8491;
+  --color-dark-text-secondary: #ffffff;
+  
+  --color-dark-card: #141a1f;
+  --color-dark-border: #242b32;
+  
+  --color-dark-tags: #1a2329;
+  --color-dark-tags-border: #33445A;
+  
+  --color-dark-highlight-yellow: #f5a623;
+  --color-dark-highlight-pink: #DD5884;
+  --color-dark-highlight-green: #2F953C;
+  
+}
+
+@layer base{
+  html{
+    scroll-behavior: smooth;
+  }
+
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .font-raleway{
+    font-family: "Raleway", sans-serif;
+  }
+}
+
+@layer components{
+  .glass {
+    background-color: color-mix(in srgb, var(--color-light-card) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-light-card-border) 50%, transparent);
+  }
+
+}
+
+@layer utilities{
+
+  /* Hero special tags */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+    100% {
+      stroke-dashoffset: -550;
+    }
+  }
+
+  /* Skills section */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+
+  .animated-border:hover {
+    background-color: color-mix(in srgb, #3870D0 15%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix(in srgb, #3870D0 20%, transparent);
+  }
+
+  .timeline-glow {
+    box-shadow: 0 0 40px
+        color-mix(in srgb, var(--color-primary) 35%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  @keyframes fade-in {
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-fade-in{
+    animation: fade-in 0.4s ease-out both;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}
+
+.reveal-up{
+  @apply translate-y-40 opacity-0
+}
