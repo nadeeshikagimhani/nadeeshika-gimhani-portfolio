@@ -1,5 +1,6 @@
 import { AlertCircle, CheckCircle, Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
 import { useState } from "react";
+import emailJs from '@emailjs/browser';
 
 const Contact = ({ darkMode }) => {
 
@@ -36,6 +37,47 @@ const Contact = ({ darkMode }) => {
     type: null,
     message: "",
   });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setIsLoading(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if(!serviceId || !templateID || ! publicKey){
+        throw new Error(
+          "EmailJS configuration is missing. Please check again!"
+        );
+      }
+
+      await emailJs.send(serviceId, templateID, {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }, publicKey);
+
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully! I'll get back to you soon..."
+      });
+
+      setFormData({name: "", email: "", message: ""});
+
+    } catch (error) {
+      console.log("Error", error);
+      setSubmitStatus({
+        type: "error",
+        message: error.text || "Failed to send message!"
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const darkTheme = {
     textPrimary: 'text-dark-text-secondary',
@@ -75,7 +117,7 @@ const Contact = ({ darkMode }) => {
           {/* contact form */} 
         <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto mt-15">
           <div className={`p-8 rounded-3xl ${theme.borderCard} reveal-up`}>
-            <form className="space-y-8 mt-2">
+            <form className="space-y-8 mt-2" onSubmit={handleSubmit}>
 
               <div>
 
