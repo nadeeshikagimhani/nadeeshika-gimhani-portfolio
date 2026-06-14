@@ -34,7 +34,7 @@ const HeroButton = ({ className = "", ...props }) => {
         />
       </svg>
       <a 
-      href="src/assets/K D N Gimhani.pdf"
+      href="/K_D_N_Gimhani.pdf"
       target="_blank"
       className="relative z-10 flex items-center justify-center gap-2">
         Download CV
