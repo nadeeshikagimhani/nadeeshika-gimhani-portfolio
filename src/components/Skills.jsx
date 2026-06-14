@@ -132,7 +132,7 @@ const Skills = ({ darkMode }) => {
           </div>
 
           {/* my skills */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10 reveal-up">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
             {techSkills.map((skill, index) => {
 
               const tagColorMap = {

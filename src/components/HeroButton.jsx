@@ -33,10 +33,13 @@ const HeroButton = ({ className = "", ...props }) => {
           className="animated-border-path"
         />
       </svg>
-      <span className="relative z-10 flex items-center justify-center gap-2">
+      <a 
+      href="public/K D N Gimhani.pdf"
+      target="_blank"
+      className="relative z-10 flex items-center justify-center gap-2">
         Download CV
         <Download className="w-5 h-5"/>
-      </span>
+      </a>
     </button>
   )
 }

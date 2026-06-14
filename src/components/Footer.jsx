@@ -3,9 +3,8 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 const Footer = ({ darkMode }) => {
 
   const socialLinks = [
-    { icon: FaGithub, href: "#", label: "GitHub" },
-    { icon: FaLinkedin, href: "#", label: "LinkedIn" },
-    { icon: FaTwitter, href: "#", label: "Twitter" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/nadeeshika-gimhani/", label: "LinkedIn" },
+    { icon: FaGithub, href: "https://github.com/nadeeshikagimhani", label: "GitHub" },
   ];
   
   const footerLinks = [
@@ -66,6 +65,7 @@ const Footer = ({ darkMode }) => {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
                 aria-label={social.label}
                 className={`p-3 rounded-full ${theme.coloredIcon} transition-all`}
               >

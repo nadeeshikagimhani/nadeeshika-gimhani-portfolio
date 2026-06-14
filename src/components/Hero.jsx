@@ -25,9 +25,8 @@ const Hero = ({ darkMode }) => {
   ];
 
   const socialLinks = [
-    { icon: FaGithub, href: "#", label: "GitHub" },
-    { icon: FaLinkedin, href: "#", label: "LinkedIn" },
-    { icon: FaTwitter, href: "#", label: "Twitter" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/nadeeshika-gimhani/", label: "LinkedIn" },
+    { icon: FaGithub, href: "https://github.com/nadeeshikagimhani", label: "GitHub" },
   ];
 
   const darkTheme = {
@@ -87,6 +86,7 @@ const Hero = ({ darkMode }) => {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
                     aria-label={social.label}
                     className={`p-3 rounded-full ${theme.coloredIcon} transition-all`}
                   >
@@ -98,7 +98,7 @@ const Hero = ({ darkMode }) => {
 
           <div className='flex gap-6 pt-8 animate-fade-in animation-delay-400'>
 
-            <button className={`${theme.button} font-raleway py-4 px-8 rounded-full cursor-pointer flex justify-center items-center hover:scale-105 transition-all duration-500`}>View My Work <ExternalLink className='ml-4 h-5 w-5'/></button>
+            <a href="#projects" className={`${theme.button} font-raleway py-4 px-8 rounded-full cursor-pointer flex justify-center items-center hover:scale-105 transition-all duration-500`}>View My Work <ExternalLink className='ml-4 h-5 w-5'/></a>
 
             <HeroButton
             className={`${darkMode
@@ -140,7 +140,7 @@ const Hero = ({ darkMode }) => {
             <div className='flex animate-marquee'>
               {[...skills, ...skills].map((skill, index)=>(
                 <div key={index} className='shrink-0 px-8 py-4'>
-                  <span className={`text-lg font-semibold text-gray-400/20 cursor-pointer transition-colors ${theme.skillsTag}`}>{skill}</span>
+                  <span className={`text-lg font-semibold ${darkMode ? 'text-gray-400/20' : 'text-gray-300'} cursor-pointer transition-colors`}>{skill}</span>
                 </div>
               ))}
             </div>

@@ -122,7 +122,7 @@ const Projects = ({ darkMode }) => {
           </div>
 
           {/* projects display */}
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8 reveal-up'>
+          <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8'>
             {projects.map((item, index) => (
               <div
               key={index}

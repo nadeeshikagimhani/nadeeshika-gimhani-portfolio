@@ -26,7 +26,7 @@
   --color-dark-primary: #0f1418;
   --color-dark-secondary: #3870D0;
   
-  --color-dark-text-primary: #7a8491;
+  --color-dark-text-primary: #989FA8;
   --color-dark-text-secondary: #ffffff;
   
   --color-dark-card: #141a1f;
@@ -44,6 +44,10 @@
 @layer base{
   html{
     scroll-behavior: smooth;
+  }
+
+  body{
+    overflow: hidden;
   }
 
   .font-poppins {

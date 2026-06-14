@@ -70,12 +70,12 @@ const About = ({ darkMode}) => {
             <div>
              <div className="flex flex-col lg:flex-row justify-between mt-8 lg:mt-4">
               <div className="text-[15px]">
-               <p className="font-semibold font-poppins">BSc (Hons) Software Engineering</p>
+               <p className="font-semibold font-poppins">HND in Computing & Software Engineering</p>
                <p className="font-poppins">Cardiff Metropolitan University</p>
               </div>
 
               <div className="mt-4 lg:mt-0">
-               <span className={`${theme.coloredCard} px-4 py-2 rounded-full text-xs font-poppins`}>Nov 2020 – Oct 2021</span>
+               <span className={`${theme.coloredCard} px-4 py-2 rounded-full text-xs font-poppins`}>Nov 2018 – Aug 2020</span>
               </div>
               
              </div>

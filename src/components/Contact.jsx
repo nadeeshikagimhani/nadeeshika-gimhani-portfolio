@@ -115,8 +115,8 @@ const Contact = ({ darkMode }) => {
           </div>
 
           {/* contact form */} 
-        <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto mt-15">
-          <div className={`p-8 rounded-3xl ${theme.borderCard} reveal-up`}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:max-w-6xl mx-auto mt-15">
+          <div className={`p-8 rounded-3xl ${theme.borderCard}`}>
             <form className="space-y-8 mt-2" onSubmit={handleSubmit}>
 
               <div>
@@ -155,7 +155,7 @@ const Contact = ({ darkMode }) => {
                     ? 'border-dark-border focus:dark-secondary focus:ring-1 focus:ring-dark-secondary'
                     : 'border-light-secondary/20 focus:dark-secondary focus:ring-1 focus:ring-dark-secondary'} outline-none transition-all`}
                 required
-                placeholder="youremail@gmai.com"/>
+                placeholder="youremail@gmail.com"/>
 
               </div>
 
@@ -224,7 +224,7 @@ const Contact = ({ darkMode }) => {
 
           {/* Contact Info */}
           <div className={`space-y-6`}>
-            <div className={`${theme.coloredCard} rounded-3xl py-8 px-6 reveal-up`}>
+            <div className={`${theme.coloredCard} rounded-3xl py-8 sml:px-6 px-4`}>
               <h3 className={`${theme.textPrimary} text-xl font-semibold mb-6 font-raleway`}>
                 Contact Information
               </h3>
@@ -233,15 +233,15 @@ const Contact = ({ darkMode }) => {
                   <a
                     key={i}
                     href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-dark-secondary/10 transition-colors group"
+                    className="flex items-center text-xs sm:text-base gap-4 p-4 rounded-xl hover:bg-dark-secondary/10 transition-colors group"
                   >
                     <div className={`${
                       darkMode
                       ? 'bg-dark-secondary/10 group-hover:bg-dark-secondary/20'
                       : 'bg-dark-secondary/15'
                     }
-                    w-12 h-12 rounded-xl flex items-center justify-center  transition-colors`}>
-                      <item.icon className="w-5 h-5" />
+                    w-8 h-8 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center  transition-colors`}>
+                      <item.icon className="w-4 h-4" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">
