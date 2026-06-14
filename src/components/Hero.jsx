@@ -96,7 +96,7 @@ const Hero = ({ darkMode }) => {
               </div>
           </div>
 
-          <div className='flex gap-6 pt-8 animate-fade-in animation-delay-400'>
+          <div className='flex flex-col sm:flex-row gap-6 pt-8 animate-fade-in animation-delay-400'>
 
             <a href="#projects" className={`${theme.button} font-raleway py-4 px-8 rounded-full cursor-pointer flex justify-center items-center hover:scale-105 transition-all duration-500`}>View My Work <ExternalLink className='ml-4 h-5 w-5'/></a>
 
