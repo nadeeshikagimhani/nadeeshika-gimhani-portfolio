@@ -1,6 +1,10 @@
 import { SquareArrowOutUpRight } from 'lucide-react';
 import projectImg from '../assets/projectImg.png'
 import mangoVacationImg from '../assets/mango-vacation.jpg'
+import kingCoconutImg from '../assets/king cocnut.jpg'
+import HandmadeHaven from '../assets/handmade haven.jpg'
+import solutionMaster from '../assets/solution master.jpg'
+import taraLeisure from '../assets/tara leisure.jpg'
 import { FaGithub, FaFigma } from "react-icons/fa";
 
 const Projects = ({ darkMode }) => {
@@ -17,7 +21,7 @@ const Projects = ({ darkMode }) => {
     },
     {
       status: "In Progress",
-      image: projectImg,
+      image: kingCoconutImg,
       title: "King Coconut Holidays",
       subTitle: "An ongoing, collaborative travel platform built from custom Figma prototypes to dynamic WordPress architecture.",
       tags: ["UI/UX Design","Figma","WordPress","ACF/CPT","Collaborative Workflow", "Dynamic CMS"],
@@ -31,7 +35,7 @@ const Projects = ({ darkMode }) => {
     },
     {
       status: "Case Study/Learning",
-      image: projectImg,
+      image: solutionMaster,
       title: "Solution Master",
       subTitle: "A comprehensive UI redesign and dynamic content restructuring for an engineering and corporate business website.",
       tags: ["Figma UI Design","Elementor","ACF/CPT","Corporate Web Design", "Digital Asset Management"],
@@ -59,11 +63,25 @@ const Projects = ({ darkMode }) => {
     },
     {
       status: "Active Development",
-      image: projectImg,
+      image: HandmadeHaven,
       title: "Handmade Haven",
       subTitle: "An active, full-stack E-commerce web application currently under development using the MERN ecosystem.",
       tags: ["MERN Stack", "JavaScript (ES6+)", "React.js", "E-commerce","Backend Learnin"],
       description: "An ongoing personal project designed to simulate a modern, component-driven online marketplace. I am currently designing and coding the responsive frontend layout using React and JavaScript, with plans to integrate secure database handling and state management pipelines as the project transitions into active full-stack testing.",
+      liveSite: "#",
+      secondaryLink: {
+        text: "Github",
+        url: "#",
+        type: "github"
+      }
+    },
+    {
+      status: "In Progress",
+      image: taraLeisure,
+      title: "Tara Leisure By Gerard",
+      subTitle: "A collaborative UI design and bespoke WordPress portfolio platform built for an elite, veteran travel curation business.",
+      tags: ["UI/UX Design (Figma)", "WordPress","Elementor", "Collaborative Workflow", "Travel Portfolio Design", "Active Development"],
+      description: "Partnered with a fellow developer to design and engineer a premium travel portfolio for an industry veteran with over 40 years of European tourist guiding experience in Sri Lanka. I translated the client's rich legacy into a high-converting, modern UI layout using Figma. We are currently executing the frontend architecture inside WordPress using Elementor, focusing heavily on immersive visual storytelling, seamless itinerary browsing, and an intuitive booking inquiry funnel.",
       liveSite: "#",
       secondaryLink: {
         text: "Github",
