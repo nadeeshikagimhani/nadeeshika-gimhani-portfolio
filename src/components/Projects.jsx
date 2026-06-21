@@ -54,7 +54,7 @@ const Projects = ({ darkMode }) => {
       subTitle: "A foundational MERN stack CRUD application built to master backend logic and database architectures.",
       tags: ["MERN Stack","Node.js","Express.js","MongoDB", "REST APIs","Backend Learnin"],
       description: "My introductory project into full-stack JavaScript development, built explicitly to understand server-side operations. I engineered RESTful API endpoints using Node.js and Express, configured schema modeling using MongoDB, and connected the system to a clean frontend to handle persistent, real-time user data creation and retrieval.",
-      liveSite: "#",
+      liveSite: "",
       secondaryLink: {
         text: "Github",
         url: "https://www.figma.com/design/NXzjLKa7N9UvxTJVJ5MZsk/Solution-Master?node-id=0-1&t=kc80PzjhwlYq3kpq-1",
@@ -68,10 +68,10 @@ const Projects = ({ darkMode }) => {
       subTitle: "An active, full-stack E-commerce web application currently under development using the MERN ecosystem.",
       tags: ["MERN Stack", "JavaScript (ES6+)", "React.js", "E-commerce","Backend Learnin"],
       description: "An ongoing personal project designed to simulate a modern, component-driven online marketplace. I am currently designing and coding the responsive frontend layout using React and JavaScript, with plans to integrate secure database handling and state management pipelines as the project transitions into active full-stack testing.",
-      liveSite: "#",
+      liveSite: "",
       secondaryLink: {
         text: "Github",
-        url: "#",
+        url: "https://github.com/nadeeshikagimhani/handmade-haven.git",
         type: "github"
       }
     },
@@ -169,11 +169,24 @@ const Projects = ({ darkMode }) => {
 
                 <div className='flex gap-3 mt-6'>
                   <a
-                  className='bg-dark-secondary text-white font-raleway font-semibold tracking-wide text-sm py-2 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-[#2E64C0] hover:shadow-[0_8px_25px_rgba(56,112,208,0.3)] hover:scale-105 transition-all duration-500'
-                  href={item.liveSite}
-                  target='_blank'>
-                    Live Site
-                    <SquareArrowOutUpRight className='h-4 w-4'/>
+                    className={`font-raleway font-semibold tracking-wide text-sm py-2 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-500
+                      ${
+                        item.liveSite
+                          ? "bg-dark-secondary text-white hover:bg-[#2E64C0] hover:shadow-[0_8px_25px_rgba(56,112,208,0.3)] hover:scale-105"
+                          : "bg-dark-secondary/20 text-dark-secondary/50 cursor-not-allowed"
+                      }`}
+                    href={item.liveSite || undefined}
+                    target={item.liveSite ? "_blank" : undefined}
+                    onClick={(e) => !item.liveSite && e.preventDefault()}
+                  >
+                    {item.liveSite ? (
+                      <>
+                        Live Site
+                        <SquareArrowOutUpRight className="h-4 w-4" />
+                      </>
+                    ) : (
+                      "Coming Soon..."
+                    )}
                   </a>
 
                   {item.secondaryLink && (
