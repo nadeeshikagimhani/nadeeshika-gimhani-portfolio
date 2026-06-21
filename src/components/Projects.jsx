@@ -82,11 +82,11 @@ const Projects = ({ darkMode }) => {
       subTitle: "A collaborative UI design and bespoke WordPress portfolio platform built for an elite, veteran travel curation business.",
       tags: ["UI/UX Design (Figma)", "WordPress","Elementor", "Collaborative Workflow", "Travel Portfolio Design", "Active Development"],
       description: "Partnered with a fellow developer to design and engineer a premium travel portfolio for an industry veteran with over 40 years of European tourist guiding experience in Sri Lanka. I translated the client's rich legacy into a high-converting, modern UI layout using Figma. We are currently executing the frontend architecture inside WordPress using Elementor, focusing heavily on immersive visual storytelling, seamless itinerary browsing, and an intuitive booking inquiry funnel.",
-      liveSite: "#",
+      liveSite: "https://taraleisuretravels.zeebrart.com/",
       secondaryLink: {
-        text: "Github",
-        url: "#",
-        type: "github"
+        text: "Figma",
+        url: "https://www.figma.com/design/OiVtyUYhwabTlff0bLz2gJ/Tara-Leisure?node-id=71-2&t=M66iLWDLwq11Yuqo-1",
+        type: "figma"
       }
     },
   ];
@@ -144,33 +144,34 @@ const Projects = ({ darkMode }) => {
             {projects.map((item, index) => (
               <div
               key={index}
-              className={`${theme.borderCard} relative group px-3 py-3 rounded-xl`}
+              className={`${theme.borderCard} relative group px-3 pt-3 pb-6 rounded-xl`}
               >
 
-                <div className='relative'>
+                <div className='relative rounded overflow-hidden'>
 
-                  <img src={item.image} alt='' className='w-full object-cover rounded'/>
+                  <img src={item.image} alt='' className='w-full object-cover transition-transform duration-700 ease-in-out hover:scale-110 cursor-pointer'/>
 
                   <span className={`${theme.statusTag} rounded font-semibold font-poppins absolute top-4 left-4 text-[12px]`}>{item.status}</span>
 
                 </div>
 
                 <div className='my-6'>
-                  <h3 className={`${theme.textPrimary} font-raleway font-semibold text-[18px]`}>{item.title}</h3>
-                  <p className={`${darkMode ? 'text-white/90' : 'text-black'} leading-5.5 font-poppins font-medium pt-3 pb-5 text-[14px]`}>{item.subTitle}</p>
+                  <h3 className={`${theme.textPrimary} font-raleway font-semibold text-[18px] cursor-pointer`}>{item.title}</h3>
+                  <p className={`${darkMode ? 'text-white/90' : 'text-black'} leading-5.5 font-poppins font-medium pt-3 pb-5 text-[14px] cursor-pointer`}>{item.subTitle}</p>
 
                   <div className='flex flex-wrap gap-2'>
                     {item.tags.map((tagItem, index) => (
-                      <span key={index} className={`${theme.coloredTag} px-3 py-1 rounded-full text-xs font-poppins`}>{tagItem}</span>
+                      <span key={index} className={`${theme.coloredTag} px-3 py-1 rounded-full text-xs font-poppins cursor-pointer`}>{tagItem}</span>
                     ))}
                   </div>
                 </div>
-                <p className="font-poppins text-[13px] mt-2 leading-5.5">{item.description}</p>
+                <p className="font-poppins text-[13px] mt-2 mb-10 leading-6 cursor-pointer">{item.description}</p>
 
-                <div className='flex gap-3 mt-4'>
+                <div className='flex gap-3 mt-6'>
                   <a
                   className='bg-dark-secondary text-white font-raleway font-semibold tracking-wide text-sm py-2 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-[#2E64C0] hover:shadow-[0_8px_25px_rgba(56,112,208,0.3)] hover:scale-105 transition-all duration-500'
-                  href=' '>
+                  href={item.liveSite}
+                  target='_blank'>
                     Live Site
                     <SquareArrowOutUpRight className='h-4 w-4'/>
                   </a>

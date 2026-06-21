@@ -9,9 +9,9 @@ const Footer = ({ darkMode }) => {
   
   const footerLinks = [
     { href: "#about", label: "About" },
-    { href: "#skills", label: "Projects" },
+    { href: "#skills", label: "Skills" },
     { href: "#experience", label: "Experience" },
-    { href: "#project", label: "Contact" },
+    { href: "#projects", label: "Projects" },
   ];
 
   const darkTheme = {
@@ -42,7 +42,7 @@ const Footer = ({ darkMode }) => {
               NG<span className="text-light-secondary">.</span>
             </a>
             <p className={`${theme.bodyText} font-poppins text-sm mt-3 font-semibold`}>
-              © {currentYear} Nadeeshika Gimhani. All rights reserved.
+              © {currentYear} Nadeeshika Gimhani. All Rights Reserved.
             </p>
           </div>
 
